@@ -75,29 +75,29 @@ function Header() {
     } 
 
     return (
-        <header class="header">
-            <div class="header__container">
-            <div class="header__mobile">
-                <div class="header__drawer menu header__drawer--active">
-                <img class="menu__img" src={MenuIcon} alt="open menu" />
-                <p class="menu__title">menu</p>
+        <header className="header">
+            <div className="header__container">
+            <div className="header__mobile">
+                <div className="header__drawer menu header__drawer--active">
+                <img className="menu__img" src={MenuIcon} alt="open menu" />
+                <p className="menu__title">menu</p>
                 </div>
-                <div class="header__drawer close">
+                <div className="header__drawer close">
                 <img src={CloseIcon} alt="close menu" />
-                <p class="close__title">fechar</p>
+                <p className="close__title">fechar</p>
                 </div>
-                <h1 class="header__logo">
-                <img class="header__img" src={LogoResposiveIcon} alt="RCHLO" />
+                <h1 className="header__logo">
+                <img className="header__img" src={LogoResposiveIcon} alt="RCHLO" />
                 </h1>
             </div>
-            <div class="header__desktop">
-                <h1 class="header__logo">
-                <img class="header__img" src={LogoIcon} alt="Riachuelo" />
+            <div className="header__desktop">
+                <h1 className="header__logo">
+                <img className="header__img" src={LogoIcon} alt="Riachuelo" />
                 </h1>
             </div>
-            <div class="header__search">
-                <img class="header__icon" src={SearchIcon} alt="Buscar" />
-                <input class="header__input" type="search" placeholder="O que você está procurando?"
+            <div className="header__search">
+                <img className="header__icon" src={SearchIcon} alt="Buscar" />
+                <input className="header__input" type="search" placeholder="O que você está procurando?"
                 onChange={filter} />
             </div>
     

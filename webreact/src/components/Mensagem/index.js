@@ -12,7 +12,7 @@ function Mensagem() {
     const contexto = useContext(MensagemContext)
     const { mensagem, setMensagem } = contexto
 
-    setTimeout(() => setMensagem({ ...mensagem, show: false }) , 3000)
+    setTimeout(() => setMensagem({ ...mensagem, show: false }) , 4000)
 
     return (
         <div className={`mensagem ${mensagem.type}`} style={{ display: mensagem.show ? "flex" : "none" }}>

@@ -9,8 +9,8 @@ function Filters() {
   const { products } = productsContext
 
     return (
-        <section class="main__filters filters">
-            <ul class="filters__list">
+        <section className="main__filters filters">
+            <ul className="filters__list">
                 {
                   products.filters.map(filter =><FilterItem key={filter.id} label={filter.label} /> )
                 }
