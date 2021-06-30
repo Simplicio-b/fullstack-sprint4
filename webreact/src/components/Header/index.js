@@ -3,6 +3,7 @@ import React, { useContext, useEffect } from 'react';
 // contextos 
 import { MensagemContext } from '../../contexts/mensagem'
 import { CategoriaContext } from '../../contexts/categorias'
+import { ProductsContext } from '../../contexts/products'
 
 // icons
 import MenuIcon from '../../assets/menu.svg'
@@ -24,6 +25,9 @@ function Header() {
 
     const contextCategoria = useContext(CategoriaContext)
     const { categorias, setCategorias } = contextCategoria
+
+    const productsContext = useContext(ProductsContext)
+    const { products, setProducts } = productsContext
 
     const [result, loading, error] = useFetch("http://localhost:3000/data/categories.json");
 
@@ -53,6 +57,18 @@ function Header() {
         return
     }, [error, result])
 
+    const filter = (event) => {
+        const valueInput = event.target.value.toLocaleUpperCase()
+        const res = products.products_imutable.filter(product => {
+            if(product.name.toLocaleUpperCase().includes(valueInput)) {
+                return product
+            }
+        })
+        console.log(valueInput)
+        console.log(res)
+        setProducts({ ...products, products: res })
+    } 
+
     return (
         <header class="header">
             <div class="header__container">
@@ -77,7 +93,7 @@ function Header() {
             <div class="header__search">
                 <img class="header__icon" src={SearchIcon} alt="Buscar" />
                 <input class="header__input" type="search" placeholder="O que você está procurando?"
-                oninput="produtoController.filtra(event)" />
+                onChange={filter} />
             </div>
     
             <Menu />

@@ -43,6 +43,7 @@ function ProductsPage() {
 
           setProducts({ 
               ...products, 
+              products_imutable: result ? result.products : [],
               products: result ? result.products : [], 
               filters: result ?  result.filters : [] 
           })

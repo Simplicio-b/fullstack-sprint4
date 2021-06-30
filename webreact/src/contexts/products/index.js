@@ -3,6 +3,7 @@ import React from 'react';
 export const ProductsContext = React.createContext();
 
 const INITAL_STATE = {
+    products_imutable: [],
     products: [],
     filters: []
 }

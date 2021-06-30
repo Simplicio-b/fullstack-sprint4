@@ -16,8 +16,8 @@ function App() {
         <Mensagem />
         
         <CatgoriasContext>
-          <Header />
           <ProductContext>
+            <Header />
             <ProdutcsPage />
           </ProductContext>
         </CatgoriasContext>
