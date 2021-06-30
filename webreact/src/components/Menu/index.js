@@ -90,8 +90,8 @@ const categorias = {
 
 function Menu() {
     return (
-        <nav class="header__menu menu">
-            <ul class="menu__list">
+        <nav className="header__menu menu">
+            <ul className="menu__list">
               {categorias.all.map(el => <MenuItem key={el.id} label={el.label} link={el.link} />)}
             </ul>
         </nav>

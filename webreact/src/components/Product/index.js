@@ -2,17 +2,17 @@ import React from 'react';
 
 function Product({ description, image, price }) {
     return (
-        <li class="products__card">
-            <div class="card">
+        <li className="products__card">
+            <div className="card">
                 <img
-                    class="card__img"
+                    className="card__img"
                     src={image}
                     alt=""
                 />
-                <p class="card__description">
+                <p className="card__description">
                     {description}
                 </p>
-                <p class="card__price">R$ {price}</p>
+                <p className="card__price">R$ {price}</p>
             </div>
         </li>      
     );

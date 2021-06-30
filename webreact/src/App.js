@@ -4,13 +4,18 @@ import Footer from './components/Footer'
 import Mensagem from './components/Mensagem'
 import ProdutcsPage from './components/ProductsPage'
 
+import { MsgContext } from './contexts/mensagem'
+
 function App() {
   return (
     <>
-      <Mensagem type="danger" />
-      
-      <Header />
-      <ProdutcsPage />
+
+      <MsgContext>
+        <Mensagem />
+        <Header />
+        <ProdutcsPage />
+      </MsgContext>
+
       <Footer />
     </>
   );

@@ -106,22 +106,23 @@ const data = {
 function ProductsPage() {
     return (
         
-        <main class="main">
-            <Breadcrumbs />
-            <Filters />
+      <main className="main">
 
-            <section class="main__products products">
-                <div id="produtosView">
-                    <div class="products__row">
-                        <ol class="products__list">
-                            {
-                                data.products.map(e => <Product description={e.name} price={e.price} image={`${e.image}`} /> )
-                            }
-                        </ol>
-                    </div>
-                </div>
-            </section>
-        </main>
+        <Breadcrumbs />
+        <Filters />
+
+        <section className="main__products products">
+            <div id="produtosView">
+              <div className="products__row">
+                <ol className="products__list">
+                  {
+                    data.products.map(e => <Product description={e.name} price={e.price} image={`${e.image}`} /> )
+                  }
+                </ol>
+              </div>
+            </div>
+        </section>
+      </main>
     );
 }
 
