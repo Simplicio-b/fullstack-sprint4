@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Product from '../Product';
 import Breadcrumbs from '../Breadcrumbs'
@@ -110,11 +110,9 @@ const data = {
 
 function ProductsPage() {
     const [result, loading, error] = useFetch("http://localhost:3000/data/products.json");
-
-    console.log(result)
-    console.log(loading)
-    console.log(error)
-
+    
+    
+    
     return (
         
       <main className="main">
