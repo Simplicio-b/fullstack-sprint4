@@ -1,12 +1,14 @@
 import React from 'react';
 
 function Product({ description, image, price }) {
+    const img = require(`../../${image}`);
+
     return (
         <li className="products__card">
             <div className="card">
                 <img
                     className="card__img"
-                    src={image}
+                    src={img["default"]}
                     alt=""
                 />
                 <p className="card__description">
