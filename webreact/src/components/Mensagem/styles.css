@@ -1,0 +1,45 @@
+.mensagem {
+    align-items: center;    
+    border-radius: 2px;
+    background-color: #6c757d;
+
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 10px 20px;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    z-index: 9999;
+}
+
+.mensagem__text {
+    color: #FFF;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    margin-right: 20px;
+}
+
+.mensagem__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50px;
+    height: 1.8rem;
+    width: 1.8rem;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.mensagem__btn:hover {
+    background-color: #FFFFFF75;
+}
+
+.danger {
+    background-color: #f44336;
+}
+
+.success {
+    background-color: #28a745;
+}
