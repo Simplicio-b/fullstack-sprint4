@@ -16,9 +16,9 @@ function App() {
         
         <CatgoriasContext>
           <Header />
+          <ProdutcsPage />
         </CatgoriasContext>
 
-        <ProdutcsPage />
       </MsgContext>
 
       <Footer />

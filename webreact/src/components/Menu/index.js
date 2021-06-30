@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import MenuItem from '../MenuItem';
 
-import { CategoriaContext } from '../../contexts/categorias'
+import { CategoriaContext } from '../../contexts/categorias';
 
 function Menu() {
     const contextCategoria = useContext(CategoriaContext)
