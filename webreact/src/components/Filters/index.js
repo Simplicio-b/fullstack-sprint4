@@ -1,36 +1,18 @@
+import React, { useContext } from 'react';
 import FilterItem from "../FilterItem"
 
-const data = {
-    "filters": [
-      {
-        "id": "size",
-        "label": "Tamanho"
-      },
-      {
-        "id": "color",
-        "label": "Cor"
-      },
-      {
-        "id": "department",
-        "label": "Departamento"
-      },
-      {
-        "id": "category",
-        "label": "Categoria"
-      },
-      {
-        "id": "sleeve",
-        "label": "Manga"
-      }
-    ]
-  }
+// context
+import { ProductsContext } from '../../contexts/products'
 
 function Filters() {
+  const productsContext = useContext(ProductsContext)
+  const { products } = productsContext
+
     return (
         <section class="main__filters filters">
             <ul class="filters__list">
                 {
-                    data.filters.map(filter =><FilterItem label={filter.label} /> )
+                  products.filters.map(filter =><FilterItem key={filter.id} label={filter.label} /> )
                 }
             </ul>
         </section>

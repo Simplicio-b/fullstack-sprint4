@@ -6,7 +6,8 @@ import ProdutcsPage from './components/ProductsPage'
 
 import { MsgContext } from './contexts/mensagem'
 import { CatgoriasContext } from './contexts/categorias'
-
+import { ProductContext } from './contexts/products'
+ 
 function App() {
   return (
     <>
@@ -16,7 +17,9 @@ function App() {
         
         <CatgoriasContext>
           <Header />
-          <ProdutcsPage />
+          <ProductContext>
+            <ProdutcsPage />
+          </ProductContext>
         </CatgoriasContext>
 
       </MsgContext>
