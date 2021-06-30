@@ -2,6 +2,7 @@ import React from 'react';
 
 import Product from '../Product';
 import Breadcrumbs from '../Breadcrumbs'
+import Filters from '../Filters'
 
 const data = {
   "products": [
@@ -107,31 +108,7 @@ function ProductsPage() {
         
         <main class="main">
             <Breadcrumbs />
-            
-            <section class="main__filters filters">
-                <ul class="filters__list">
-                    <li class="filters__item">
-                    <span class="filters__label">Tamanho</span>
-                    <img class="filters__img" src="assets/filter.svg" alt="" />
-                    </li>
-                    <li class="filters__item">
-                    <span class="filters__label">Cor</span>
-                    <img class="filters__img" src="assets/filter.svg" alt="" />
-                    </li>
-                    <li class="filters__item">
-                    <span class="filters__label">Departamento</span>
-                    <img class="filters__img" src="assets/filter.svg" alt="" />
-                    </li>
-                    <li class="filters__item">
-                    <span class="filters__label">Categoria</span>
-                    <img class="filters__img" src="assets/filter.svg" alt="" />
-                    </li>
-                    <li class="filters__item">
-                    <span class="filters__label">Manga</span>
-                    <img class="filters__img" src="assets/filter.svg" alt="" />
-                    </li>
-                </ul>
-            </section>
+            <Filters />
 
             <section class="main__products products">
                 <div id="produtosView">

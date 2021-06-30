@@ -6,22 +6,22 @@ const breadcrumbItems = ["Home", "Infatil", "Personagens", "Mario Bros"]
 function Breadcrumbs() {
 
     return (
-        <section class="main__breadcrumbs breadcrumbs">
+        <section className="main__breadcrumbs breadcrumbs">
             <nav>
-                <ol class="breadcrumbs__list">
+                <ol className="breadcrumbs__list">
                     { 
                         breadcrumbItems.map((breadcrumb, index, arr) => {
 
                             if(index === (arr.length - 1)) {
                                 return (
-                                    <BreadcrumbItem value={breadcrumb} />
+                                    <BreadcrumbItem key={index} value={breadcrumb} />
                                 )
                             }
                             
                             return (
                                 <>
-                                    <BreadcrumbItem value={breadcrumb} />
-                                    <li class="breadcrumbs__item  breadcrumbs__separator">/</li>
+                                    <BreadcrumbItem key={index} value={breadcrumb} />
+                                    <li className="breadcrumbs__item  breadcrumbs__separator">/</li>
                                 </>
                             )
                         })
