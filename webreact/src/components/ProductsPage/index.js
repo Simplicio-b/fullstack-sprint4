@@ -1,9 +1,9 @@
 import React, { useEffect, useContext } from 'react';
 
-// context
 // contextos 
 import { MensagemContext } from '../../contexts/mensagem'
 import { ProductsContext } from '../../contexts/products'
+import { LoadingContext } from '../../contexts/loading'
 
 // components
 import Product from '../Product';
@@ -15,15 +15,20 @@ import { useFetch } from '../../hooks/useFetch'
 
 
 function ProductsPage() {
-    const [result, loading, error] = useFetch("http://localhost:3000/data/products.json");
+    const [result, load, error] = useFetch("http://localhost:3000/data/products.json");
     
     const contextMensagem = useContext(MensagemContext)
     const { mensagem, setMensagem } = contextMensagem
 
     const productsContext = useContext(ProductsContext)
     const { products, setProducts } = productsContext
+
+    const contextLoading = useContext(LoadingContext)
+    const { loading, setLoading } = contextLoading
     
     useEffect(() => {
+      setLoading({...loading, show: load })
+      
       if(error) {
           setMensagem({ 
               ...mensagem, 
@@ -49,7 +54,7 @@ function ProductsPage() {
           })
       }
       return
-  }, [error, result])
+  }, [error, load, result])
 
     return (
         

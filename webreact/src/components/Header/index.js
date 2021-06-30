@@ -4,6 +4,7 @@ import React, { useContext, useEffect } from 'react';
 import { MensagemContext } from '../../contexts/mensagem'
 import { CategoriaContext } from '../../contexts/categorias'
 import { ProductsContext } from '../../contexts/products'
+import { LoadingContext } from '../../contexts/loading'
 
 // icons
 import MenuIcon from '../../assets/menu.svg'
@@ -29,9 +30,14 @@ function Header() {
     const productsContext = useContext(ProductsContext)
     const { products, setProducts } = productsContext
 
-    const [result, loading, error] = useFetch("http://localhost:3000/data/categories.json");
+    const contextLoading = useContext(LoadingContext)
+    const { loading, setLoading } = contextLoading
+
+    const [result, load, error] = useFetch("http://localhost:3000/data/categories.json");
 
     useEffect(() => {
+        setLoading({...loading, show: load })
+
         if(error) {
             setMensagem({ 
                 ...mensagem, 
@@ -54,8 +60,9 @@ function Header() {
                 current: result ?  result.current : [] 
             })
         }
+
         return
-    }, [error, result])
+    }, [error, result, load])
 
     const filter = (event) => {
         const valueInput = event.target.value.toLocaleUpperCase()
@@ -64,8 +71,6 @@ function Header() {
                 return product
             }
         })
-        console.log(valueInput)
-        console.log(res)
         setProducts({ ...products, products: res })
     } 
 
