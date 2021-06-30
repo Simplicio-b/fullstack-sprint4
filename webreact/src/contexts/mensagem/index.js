@@ -3,9 +3,9 @@ import React from 'react';
 export const MensagemContext = React.createContext();
 
 const INITAL_STATE = {
-    show: true,
-    text: "Ocorreu um erro ao carregar alguns dados",
-    type: "danger"
+    show: false,
+    text: "",
+    type: ""
 }
 
 export const MsgContext = ({ children }) => {

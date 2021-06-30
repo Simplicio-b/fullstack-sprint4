@@ -5,6 +5,7 @@ import Mensagem from './components/Mensagem'
 import ProdutcsPage from './components/ProductsPage'
 
 import { MsgContext } from './contexts/mensagem'
+import { CatgoriasContext } from './contexts/categorias'
 
 function App() {
   return (
@@ -12,7 +13,11 @@ function App() {
 
       <MsgContext>
         <Mensagem />
-        <Header />
+        
+        <CatgoriasContext>
+          <Header />
+        </CatgoriasContext>
+
         <ProdutcsPage />
       </MsgContext>
 

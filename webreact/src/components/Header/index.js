@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+
+// contextos 
+import { MensagemContext } from '../../contexts/mensagem'
+import { CategoriaContext } from '../../contexts/categorias'
 
 // icons
 import MenuIcon from '../../assets/menu.svg'
@@ -10,7 +14,45 @@ import SearchIcon from '../../assets/search.svg'
 // components
 import Menu from '../Menu'
 
+// hooks
+import { useFetch } from '../../hooks/useFetch'
+
 function Header() {
+    
+    const contextMensagem = useContext(MensagemContext)
+    const { mensagem, setMensagem } = contextMensagem
+
+    const contextCategoria = useContext(CategoriaContext)
+    const { categorias, setCategorias } = contextCategoria
+
+    const [result, loading, error] = useFetch("http://localhost:3000/data/categories.json");
+
+    useEffect(() => {
+        if(error) {
+            setMensagem({ 
+                ...mensagem, 
+                type: "danger", 
+                show: true, 
+                text: "Error ao carregar as categorias!"
+            })
+        }
+
+        if(!error) {
+            setMensagem({ 
+                ...mensagem, 
+                type: "success", 
+                show: true, 
+                text: "Categorias carregadas com sucesso!"
+            })
+            setCategorias({ 
+                ...categorias, 
+                all: result ? result.all : [], 
+                current: result ?  result.current : [] 
+            })
+        }
+        return
+    }, [error, result])
+
     return (
         <header class="header">
             <div class="header__container">

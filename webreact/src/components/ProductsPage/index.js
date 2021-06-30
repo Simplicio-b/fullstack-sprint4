@@ -4,6 +4,9 @@ import Product from '../Product';
 import Breadcrumbs from '../Breadcrumbs'
 import Filters from '../Filters'
 
+// hooks
+import { useFetch } from '../../hooks/useFetch'
+
 const data = {
   "products": [
     {
@@ -103,7 +106,15 @@ const data = {
   ]
 }
 
+
+
 function ProductsPage() {
+    const [result, loading, error] = useFetch("http://localhost:3000/data/products.json");
+
+    console.log(result)
+    console.log(loading)
+    console.log(error)
+
     return (
         
       <main className="main">
