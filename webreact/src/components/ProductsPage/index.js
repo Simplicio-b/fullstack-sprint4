@@ -5,6 +5,10 @@ import { MensagemContext } from '../../contexts/mensagem';
 import { ProductsContext } from '../../contexts/products';
 import { LoadingContext } from '../../contexts/loading';
 
+// models 
+import ProductsModel from '../../models/Products'
+import FilterModel from '../../models/Filters'
+
 // components
 import Product from '../Product';
 import Breadcrumbs from '../Breadcrumbs';
@@ -38,6 +42,9 @@ function ProductsPage() {
       }
 
       if(!error) {
+          const Products = result ? result.products : [];
+          const Filter =  result ?  result.filters : [];
+     
           setMensagem({ 
               ...mensagem, 
               type: "success", 
@@ -47,18 +54,17 @@ function ProductsPage() {
 
           setProducts({ 
               ...products, 
-              products_imutable: result ? result.products : [],
-              products: result ? result.products : [], 
-              filters: result ?  result.filters : [] 
+              products_imutable: Products.map((p) => new ProductsModel(p.sku, p.image, p.name, p.price)),
+              products: Products.map((p) => new ProductsModel(p.sku, p.image, p.name, p.price)), 
+              filters: Filter.map((f) => new FilterModel(f.id, f.label)) 
           });
+        return () => {}
       }
-
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [error, load, result]);
+  }, [result, load]);
 
     return (
       <main className="main">
-
         <Breadcrumbs />
         <Filters />
 
