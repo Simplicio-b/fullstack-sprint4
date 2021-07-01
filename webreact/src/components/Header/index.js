@@ -1,42 +1,44 @@
 import React, { useContext, useEffect } from 'react';
 
 // contextos 
-import { MensagemContext } from '../../contexts/mensagem'
-import { CategoriaContext } from '../../contexts/categorias'
-import { ProductsContext } from '../../contexts/products'
-import { LoadingContext } from '../../contexts/loading'
+import { MensagemContext } from '../../contexts/mensagem';
+import { CategoriaContext } from '../../contexts/categorias';
+import { ProductsContext } from '../../contexts/products';
+import { LoadingContext } from '../../contexts/loading';
 
 // icons
-import MenuIcon from '../../assets/menu.svg'
-import CloseIcon from '../../assets/close.svg'
-import LogoResposiveIcon from '../../assets/rchlo.svg'
-import LogoIcon from '../../assets/riachuelo.svg'
-import SearchIcon from '../../assets/search.svg'
+import MenuIcon from '../../assets/menu.svg';
+import CloseIcon from '../../assets/close.svg';
+import LogoResposiveIcon from '../../assets/rchlo.svg';
+import LogoIcon from '../../assets/riachuelo.svg';
+import SearchIcon from '../../assets/search.svg';
 
 // components
-import Menu from '../Menu'
+import Menu from '../Menu';
 
 // hooks
-import { useFetch } from '../../hooks/useFetch'
+import { useFetch } from '../../hooks/useFetch';
 
 function Header() {
     
-    const contextMensagem = useContext(MensagemContext)
-    const { mensagem, setMensagem } = contextMensagem
+    // contexts
+    const contextMensagem = useContext(MensagemContext);
+    const { mensagem, setMensagem } = contextMensagem;
 
-    const contextCategoria = useContext(CategoriaContext)
-    const { categorias, setCategorias } = contextCategoria
+    const contextCategoria = useContext(CategoriaContext);
+    const { categorias, setCategorias } = contextCategoria;
 
-    const productsContext = useContext(ProductsContext)
-    const { products, setProducts } = productsContext
+    const productsContext = useContext(ProductsContext);
+    const { products, setProducts } = productsContext;
 
-    const contextLoading = useContext(LoadingContext)
-    const { loading, setLoading } = contextLoading
+    const contextLoading = useContext(LoadingContext);
+    const { loading, setLoading } = contextLoading;
 
+    // hook
     const [result, load, error] = useFetch("http://localhost:3000/data/categories.json");
 
     useEffect(() => {
-        setLoading({...loading, show: load })
+        setLoading({...loading, show: load });
 
         if(error) {
             setMensagem({ 
@@ -44,7 +46,7 @@ function Header() {
                 type: "danger", 
                 show: true, 
                 text: "Error ao carregar as categorias!"
-            })
+            });
         }
 
         if(!error) {
@@ -53,25 +55,26 @@ function Header() {
                 type: "success", 
                 show: true, 
                 text: "Categorias carregadas com sucesso!"
-            })
+            });
+
             setCategorias({ 
                 ...categorias, 
                 all: result ? result.all : [], 
                 current: result ?  result.current : [] 
-            })
+            });
         }
 
         return
-    }, [error, result, load])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [error, result, load]);
 
+    // filter funcion
     const filter = (event) => {
-        const valueInput = event.target.value.toLocaleUpperCase()
-        const res = products.products_imutable.filter(product => {
-            if(product.name.toLocaleUpperCase().includes(valueInput)) {
-                return product
-            }
-        })
-        setProducts({ ...products, products: res })
+        const valueInput = event.target.value.toLocaleUpperCase();
+
+        const res = products.products_imutable.filter(product => product.name.toLocaleUpperCase().includes(valueInput));
+
+        setProducts({ ...products, products: res });
     } 
 
     return (

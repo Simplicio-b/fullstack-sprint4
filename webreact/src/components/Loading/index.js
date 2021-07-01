@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 
 // contextos 
-import { LoadingContext } from '../../contexts/loading'
+import { LoadingContext } from '../../contexts/loading';
 
 // styles
 import "./styles.css";
 
 function Loading() {
-    const contextLoading = useContext(LoadingContext)
-    const { loading } = contextLoading
+    const contextLoading = useContext(LoadingContext);
+    const { loading } = contextLoading;
 
     return (
         <div className={`loading ${loading.show ? "" : "loading--hide"}`}>
@@ -21,7 +21,7 @@ function Loading() {
             <div className="bar bar7"></div>
             <div className="bar bar8"></div>
         </div>
-    )
+    );
 }
 
-export default Loading
+export default Loading;

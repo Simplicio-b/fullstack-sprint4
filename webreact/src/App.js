@@ -6,27 +6,18 @@ import ProdutcsPage from './components/ProductsPage'
 import Loading from './components/Loading'
 
 // Providers
-import { MsgContext } from './contexts/mensagem'
-import { CatgoriasContext } from './contexts/categorias'
-import { ProductContext } from './contexts/products'
-import { LoadContext } from './contexts/loading'
+import Provider from './contexts'
  
 function App() {
   return (
     <>
-      <LoadContext>
+      <Provider>
         <Loading />
-        <MsgContext>
-          <Mensagem />
-          <CatgoriasContext>
-            <ProductContext>
-              <Header />
-              <ProdutcsPage />
-            </ProductContext>
-          </CatgoriasContext>
-        </MsgContext>
-      </LoadContext>
-
+        <Mensagem />
+        <Header />
+        <ProdutcsPage />
+      </Provider>
+      
       <Footer />
     </>
   );

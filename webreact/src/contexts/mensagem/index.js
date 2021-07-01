@@ -8,7 +8,7 @@ const INITAL_STATE = {
     type: ""
 }
 
-export const MsgContext = ({ children }) => {
+export const MensagemProvider = ({ children }) => {
 
     const [mensagem, setMensagem] = React.useState(INITAL_STATE);
 

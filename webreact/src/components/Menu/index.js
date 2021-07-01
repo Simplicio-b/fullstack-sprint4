@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
 
-import MenuItem from '../MenuItem';
-
+// contextos
 import { CategoriaContext } from '../../contexts/categorias';
 
+// components
+import MenuItem from '../MenuItem';
+
 function Menu() {
-    const contextCategoria = useContext(CategoriaContext)
-    const { categorias } = contextCategoria
+    const contextCategoria = useContext(CategoriaContext);
+    const { categorias } = contextCategoria;
  
     return (
         <nav className="header__menu menu">

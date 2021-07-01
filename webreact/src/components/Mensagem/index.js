@@ -9,10 +9,11 @@ import { MensagemContext } from '../../contexts/mensagem'
 
 function Mensagem() {
     // type aceita duas prorpiedades success ou danger
-    const contexto = useContext(MensagemContext)
-    const { mensagem, setMensagem } = contexto
+    const contexto = useContext(MensagemContext);
+    const { mensagem, setMensagem } = contexto;
 
-    setTimeout(() => setMensagem({ ...mensagem, show: false }) , 4000)
+    // fechar a mensagem automaticamente
+    setTimeout(() => setMensagem({ ...mensagem, show: false }) , 4000);
 
     return (
         <div className={`mensagem ${mensagem.type}`} style={{ display: mensagem.show ? "flex" : "none" }}>

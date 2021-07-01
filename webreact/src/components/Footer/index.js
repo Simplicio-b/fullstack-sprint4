@@ -1,31 +1,31 @@
 // icons
-import GooglePlayIcon from '../../assets/google-play.webp'
-import AppStoreIcon from '../../assets/app-store.webp'
-import CartCreditIcon from "../../assets/ico-invoice-and-statement.svg"
-import WorkWithUsIcon from "../../assets/ico-work-with-us.svg"
-import AtendimentoIcon from "../../assets/ico-attendance.svg"
-import FaqIcon from "../../assets/ico-faq.svg"
-import CartaoRchloIcon from "../../assets/ico-cartao-rchlo1.webp"
-import CartaoRchloIcon2 from "../../assets/ico-cartao-rchlo2.webp"
-import CartaoRchloIcon3 from "../../assets/ico-cartao-rchlo3.webp"
-import CartaoVisaIcon from "../../assets/ico-cartao-visa.png"
-import CartaoMasterIcon from "../../assets/ico-cartao-master.webp"
-import CartaoAmexIcon from "../../assets/ico-cartao-amex.webp"
-import CartaoDinersIcon from "../../assets/ico-cartao-diners.png"
-import CartaoEloIcon from "../../assets/ico-cartao-elo.png"
-import BoletoIcon from "../../assets/ico-boleto.webp"
-import PaypalIcon from "../../assets/ico-paypal.png"
-import FacebookIcon from "../../assets/ico-facebook.svg"
-import InstagramIcon from "../../assets/ico-instagram.svg"
-import PinterestIcon from "../../assets/ico-pinterest.svg"
-import TwitterIcon from "../../assets/ico-twitter.svg"
-import YoutubeIcon from "../../assets/ico-youtube.svg"
-import LinkedinIcon from "../../assets/ico-linkedin.svg"
-import AcessibilityIcon from "../../assets/ico-a11y.webp"
-import CertificatedIcon from "../../assets/ra1000.webp"
+import GooglePlayIcon from '../../assets/google-play.webp';
+import AppStoreIcon from '../../assets/app-store.webp';
+import CartCreditIcon from "../../assets/ico-invoice-and-statement.svg";
+import WorkWithUsIcon from "../../assets/ico-work-with-us.svg";
+import AtendimentoIcon from "../../assets/ico-attendance.svg";
+import FaqIcon from "../../assets/ico-faq.svg";
+import CartaoRchloIcon from "../../assets/ico-cartao-rchlo1.webp";
+import CartaoRchloIcon2 from "../../assets/ico-cartao-rchlo2.webp";
+import CartaoRchloIcon3 from "../../assets/ico-cartao-rchlo3.webp";
+import CartaoVisaIcon from "../../assets/ico-cartao-visa.png";
+import CartaoMasterIcon from "../../assets/ico-cartao-master.webp";
+import CartaoAmexIcon from "../../assets/ico-cartao-amex.webp";
+import CartaoDinersIcon from "../../assets/ico-cartao-diners.png";
+import CartaoEloIcon from "../../assets/ico-cartao-elo.png";
+import BoletoIcon from "../../assets/ico-boleto.webp";
+import PaypalIcon from "../../assets/ico-paypal.png";
+import FacebookIcon from "../../assets/ico-facebook.svg";
+import InstagramIcon from "../../assets/ico-instagram.svg";
+import PinterestIcon from "../../assets/ico-pinterest.svg";
+import TwitterIcon from "../../assets/ico-twitter.svg";
+import YoutubeIcon from "../../assets/ico-youtube.svg";
+import LinkedinIcon from "../../assets/ico-linkedin.svg";
+import AcessibilityIcon from "../../assets/ico-a11y.webp";
+import CertificatedIcon from "../../assets/ra1000.webp";
 
 // styles
-import "./styles.css"
+import "./styles.css";
 
 export default function Footer() {
     return (
@@ -299,6 +299,5 @@ export default function Footer() {
             </section>
 
         </footer>
-    )
+    );
 }
-

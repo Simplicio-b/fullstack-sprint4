@@ -8,7 +8,7 @@ const INITAL_STATE = {
     filters: []
 }
 
-export const ProductContext = ({ children }) => {
+export const ProductsProvider = ({ children }) => {
 
     const [products, setProducts] = React.useState(INITAL_STATE);
 

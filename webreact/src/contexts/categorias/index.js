@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 
-export const CategoriaContext = React.createContext();
+export const CategoriaContext = createContext();
 
 const INITAL_STATE = {
     all: [],
     current: []
 }
 
-export const CatgoriasContext = ({ children }) => {
+export const CatgoriasProvider = ({ children }) => {
 
-    const [categorias, setCategorias] = React.useState(INITAL_STATE);
+    const [categorias, setCategorias] = useState(INITAL_STATE);
 
     return (
         <CategoriaContext.Provider value={{ categorias, setCategorias }} >

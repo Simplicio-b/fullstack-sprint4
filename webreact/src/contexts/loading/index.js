@@ -6,7 +6,7 @@ const INITAL_STATE = {
     show: false
 }
 
-export const LoadContext = ({ children }) => {
+export const LoadingProvider = ({ children }) => {
 
     const [loading, setLoading] = React.useState(INITAL_STATE);
 

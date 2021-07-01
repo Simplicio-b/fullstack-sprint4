@@ -8,3 +8,5 @@ npm start
 ```
 
 Acesse no navegador o endereço <http://localhost:3000>.
+
+Aplicação feita em react pode ser acessada na pasta webreact.
